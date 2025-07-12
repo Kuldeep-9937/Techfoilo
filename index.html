@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kuldeep Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0f172a;
+      color: white;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    header {
+      background: #1e293b;
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      padding: 1rem 2rem;
+      z-index: 999;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo { color: #60a5fa; font-size: 1.5rem; font-weight: bold; }
+    .menu-toggle {
+      background: #334155;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    section {
+  position: relative;
+  background: radial-gradient(#1e293b 1px, transparent 1px);
+  background-size: 30px 30px;
+  background-position: center;
+  z-index: 1;
+  padding: 100px 20px 80px;
+}
+
+
+    .bento-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: #0f172a;
+      z-index: 1000;
+      display: none;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      overflow-y: auto;
+      padding-top: 80px;
+    }
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      text-align: center;
+    }
+    .bento-grid a {
+      background: #1e293b;
+      color: white;
+      padding: 2rem 1rem;
+      border-radius: 12px;
+      font-size: 1.2rem;
+      transition: background 0.3s;
+    }
+    .bento-grid a:hover {
+      background: #334155;
+    }
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 2rem;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+   
+    body {
+  background-color: #0f172a;
+  background-image: radial-gradient(#1e40af 0.6px, transparent 0.6px);
+  background-size: 30px 30px;
+}
+
+
+
+    .hero {
+      text-align: center;
+      padding-top: 150px;
+    }
+    .intro {
+  text-align: center;
+  max-width: 600px;
+  margin: 1rem auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  opacity: 0;
+  transform: scale(0.9);
+  animation: zoomIn 0.5s ease-out 0.01s forwards;
+}
+
+@keyframes zoomIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap:  6rem;
+      margin-top: 1.5rem;
+    }
+    .social-icons a img {
+  width: 20px;
+  filter: drop-shadow(0 0 5px #3b82f6);
+  transition: transform 0.2s ease;
+}
+.social-icons a:hover img {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 10px #3b82f6);
+}
+
+
+    .tab-btns {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      background: #334155;
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+    .tab-btn:hover {
+      box-shadow: 0 0 8px white;
+    }
+    
+
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 1.5rem;
+      justify-items: center;
+    }
+    .skill {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .skill img {
+      width: 50px;
+      height: 50px;
+      background: white;
+      padding: 8px;
+      border-radius: 999px;
+    }
+    .skill p {
+      margin-top: 0.5rem;
+      font-size: 0.8rem;
+      background: #1e40af;
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+    .search-bar {
+      display: flex;
+      justify-content: center;
+      margin: 1rem 0;
+    }
+    .search-bar input {
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      width: 300px;
+      border: none;
+      outline: none;
+    }
+
+    .projects {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.project {
+  width: 220px;
+  animation: float 3s ease-in-out infinite;
+  text-align: center;
+}
+.project img {
+  width: 100%;
+  background: white;
+  border-radius: 15px;
+  padding: 5px;
+}
+.project p {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+
+
+    .edu-card {
+  max-width: 500px;
+  margin: auto;
+  background: #1e293b;
+  padding: 3rem 1.5rem;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px #0ea5e9;
+}
+
+.edu-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.edu-summary h3 {
+  font-size: 1.4rem;
+  color: #60a5fa;
+}
+
+.edu-summary p {
+  background: #0ea5e9;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-weight: bold;
+}
+
+.edu-details {
+  margin-top: 1rem;
+  display: none;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+
+    form {
+      max-width: 400px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    input, textarea {
+      padding: 0.6rem;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+    }
+    button {
+      padding: 0.6rem;
+      background: #60a5fa;
+      border: none;
+      color: white;
+      border-radius: 5px;
+    }
+
+    footer {
+      background: #1e293b;
+      text-align: center;
+      padding: 1rem;
+      color: #94a3b8;
+    }
+  </style>
+  <script>
+  function toggleEduCard(id) {
+    const details = document.getElementById(`${id}-details`);
+    details.style.display = details.style.display === 'block' ? 'none' : 'block';
+  }
+</script>
+
+
+</head>
+<body>
+
+<header>
+  <div class="logo">Kuldeep</div>
+  <div class="menu-toggle" onclick="openBentoMenu()">☰ Menu</div>
+</header>
+
+<!-- Bento Menu -->
+<div id="bentoMenu" class="bento-overlay">
+  <button class="close-btn" onclick="closeBentoMenu()">✕</button>
+  <div class="bento-grid">
+    <a href="#skills" onclick="closeBentoMenu()">Skills</a>
+    <a href="#projects" onclick="closeBentoMenu()">Projects</a>
+    <a href="#education" onclick="closeBentoMenu()">Education</a>
+    <a href="#experience" onclick="closeBentoMenu()">Experience</a>
+    <a href="#summary" onclick="closeBentoMenu()">Summary</a>
+    <a href="#contact" onclick="closeBentoMenu()">Contact</a>
+  </div>
+</div>
+
+<!-- Home -->
+<section id="home" class="hero">
+  <h1>Hello, I'm <span style="color:#60a5fa;">Kuldeep Routray</span></h1>
+  <p>Software Engineer Intern at <strong>Deepsurg<span style="color:#60a5fa;">AI</span></strong></p><br><br><br>
+  <p class="intro">
+  I'm Kuldeep Routray, a passionate and self-driven Software Engineer Intern at DeepsurgAI, with a strong foundation in computer science and web development. I specialize in building intelligent and responsive web applications using the MERN stack and Java. Alongside frontend and backend work, I also have hands-on experience in AI-powered tools and data annotation using CVAT. With a background in BSc ITM from BJB College and a deep interest in language tech, I constantly strive to integrate modern technologies like ChatGPT, Gemini, and cloud platforms into real-world projects. My goal is to create impactful digital solutions that blend design, functionality, and innovation.
+</p>
+<br><br>
+  <div class="social-icons">
+  <div class="social-icons">
+  <a href="https://www.linkedin.com/in/Kuldeep Routray" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn" />
+  </a>
+  <a href="https://github.com/kuldeep-9937" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111432.png" alt="GitHub" />
+  </a>
+  <a href="https://mail.google.com/mail/?view=cm&to=kroutray321@gmail.com" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" />
+  </a>
+</div>
+
+
+
+</section>
+
+<!-- Skills -->
+<section id="skills">
+  <h2>My Skills</h2>
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search skill..." oninput="filterSkills()" />
+  </div>
+  <div class="tab-btns">
+    <button class="tab-btn" onclick="filterTab('languages')">Languages</button>
+    <button class="tab-btn" onclick="filterTab('frameworks')">Frameworks</button>
+    <button class="tab-btn" onclick="filterTab('tools')">Tools</button>
+    <button class="tab-btn" onclick="filterTab('databases')">Databases</button>
+  </div>
+  <div class="skills-grid" id="skillsGrid"></div>
+</section>
+
+<!-- Projects -->
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects">
+
+    <!-- AI Recipe Generator Card -->
+    <div class="bg-gray-800 p-6 rounded shadow hover:scale-105 transition">
+  <img src="https://source.unsplash.com/featured/?road" alt="Road" class="rounded mb-4" />
+  <div class="flex items-center gap-4 mb-4">
+    <img src="cvat.png" alt="CVAT Logo" class="w-12 animate-bubble" />
+  </div>
+  <h3 class="text-xl font-bold mb-2">Data Annotation using CVAT</h3>
+  <p class="text-gray-300">
+    Annotated image and video datasets using CVAT for training ML models — including bounding boxes, segmentation, and labels.
+  </p>
+</div>
+
+</section>
+
+
+<!-- Education -->
+<section id="education">
+  <h2>Education</h2>
+
+  <!-- BSc Card -->
+  <div class="edu-card" onclick="toggleEduCard('bsc')">
+    <div class="edu-summary">
+      <h3>BSc ITM</h3>
+      <p>70%</p>
+    </div>
+    <div class="edu-details" id="bsc-details">
+      <p><strong>College:</strong> BJB Autonomous College, Odisha</p>
+      <br>
+      <p><strong>Skills Learned:</strong> Web Development, Java, MySQL, Python, Networking, Project Management</p><br>
+      <p><strong>Will:</strong> Build intelligent digital solutions powered by AI and cloud tech.</p>
+    </div>
+  </div>
+<br><br>
+  <!-- 12th Card -->
+  <div class="edu-card" onclick="toggleEduCard('plus2')">
+    <div class="edu-summary">
+      <h3>12th Science</h3>
+      <p>76%</p>
+    </div>
+    <div class="edu-details" id="plus2-details">
+      <p><strong>School:</strong> Navajyoti Science Higher Secondary School</p><br>
+      <p><strong>Stream:</strong> Science (Physics, Chemistry, Math, IT)</p><br>
+      <p><strong>Focus:</strong> Core concepts of physical sciences, problem-solving, and logic building.</p>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Summary -->
+<section id="summary">
+  <h2>Summary</h2>
+  <p style="text-align:center; max-width: 600px; margin: auto;">
+    Passionate about AI and web development. Experienced in MERN stack and data annotation tools like CVAT.
+  </p>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <h2>Contact Me</h2>
+  <form>
+    <input type="text" placeholder="Your Name" />
+    <input type="email" placeholder="Your Email" />
+    <textarea placeholder="Your Message" rows="4"></textarea>
+    <button>Send</button>
+  </form>
+  <div class="social-icons justify-center mt-6 flex gap-6">
+  <a href="https://www.linkedin.com/in/kuldeeproutray" target="_blank" title="LinkedIn">
+    <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn" />
+  </a>
+  <a href="https://github.com/kuldeeproutray" target="_blank" title="GitHub">
+    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111432.png" alt="GitHub" />
+  </a>
+  <a href="https://mail.google.com/mail/?view=cm&to=kuldeeproutray123@gmail.com" target="_blank" title="Email">
+    <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" />
+  </a>
+</div>
+
+</section>
+
+<footer>&copy; 2025 Kuldeep Routray. All Rights Reserved.</footer>
+
+<script>
+  function openBentoMenu() {
+    document.getElementById('bentoMenu').style.display = 'flex';
+  }
+  function closeBentoMenu() {
+    document.getElementById('bentoMenu').style.display = 'none';
+  }
+
+  const allSkills = {
+    languages: [
+      { name: "HTML", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg", link: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
+      { name: "CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg", link: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
+      { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg", link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+      { name: "Java", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg", link: "https://www.oracle.com/java/" }
+    ],
+    frameworks: [
+      { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", link: "https://reactjs.org/" },
+      { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg", link: "https://nodejs.org/" }
+    ],
+    tools: [
+      { name: "GitHub", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg", link: "https://github.com" },
+      { name: "VS Code", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg", link: "https://code.visualstudio.com/" },
+      { name: "ChatGPT", icon: "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg", link: "https://chat.openai.com" }
+    ],
+    databases: [
+      { name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg", link: "https://www.mysql.com/" },
+      { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg", link: "https://www.mongodb.com/" }
+    ]
+  };
+
+  let currentTab = "languages";
+  function renderSkills(filter = "") {
+    const grid = document.getElementById('skillsGrid');
+    grid.innerHTML = "";
+    let found = false;
+
+    for (const category in allSkills) {
+      allSkills[category].forEach(skill => {
+        if (skill.name.toLowerCase().includes(filter.toLowerCase()) &&
+          (filter || category === currentTab)) {
+          found = true;
+          const div = document.createElement('a');
+          div.href = skill.link;
+          div.target = "_blank";
+          div.className = "skill";
+          div.innerHTML = `<img src="${skill.icon}" /><p>${skill.name}</p>`;
+          grid.appendChild(div);
+        }
+      });
+    }
+
+    if (!found) {
+      grid.innerHTML = `<p style="color:red; grid-column: span 4;">❌ Sorry, no skill found!</p>`;
+    }
+  }
+
+  function filterTab(tab) {
+    currentTab = tab;
+    document.getElementById('searchInput').value = "";
+    renderSkills();
+  }
+
+  function filterSkills() {
+    const val = document.getElementById('searchInput').value;
+    renderSkills(val);
+  }
+
+  renderSkills();
+</script>
+</body>
+</html>
