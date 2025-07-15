@@ -315,33 +315,6 @@
     details.style.display = details.style.display === 'block' ? 'none' : 'block';
   }
 </script>
-<script>
-  const sections = document.querySelectorAll("section");
-  const navLinks = document.querySelectorAll(".nav-link");
-
-  window.onscroll = () => {
-    let current = "";
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop - 100;
-      if (pageYOffset >= sectionTop) {
-        current = section.getAttribute("id");
-      }
-    });
-
-    navLinks.forEach((link) => {
-      link.classList.remove("text-indigo-400");
-      if (link.getAttribute("href") === `#${current}`) {
-        link.classList.add("text-indigo-400");
-      }
-    });
-  };
-</script>
-  <script>
-  function toggleMenu() {
-    const menu = document.getElementById("mobileMenu");
-    menu.classList.toggle("hidden");
-  }
-</script>
 
 
 
@@ -349,28 +322,8 @@
 <body>
 
 <header>
-  <nav class="bg-gray-800 p-4 fixed w-full z-50">
-  <div class="flex justify-between items-center max-w-6xl mx-auto">
-    <div class="text-white font-bold text-xl">Kuldeep</div>
-    <div class="md:hidden">
-      <button onclick="toggleMenu()" class="text-white text-2xl">☰</button>
-    </div>
-    <div id="menu" class="hidden md:flex gap-6">
-      <a href="#home" class="nav-link hover:text-indigo-400">Home</a>
-      <a href="#skills" class="nav-link hover:text-indigo-400">Skills</a>
-      <a href="#projects" class="nav-link hover:text-indigo-400">Projects</a>
-      <a href="#contact" class="nav-link hover:text-indigo-400">Contact</a>
-      <a href="resume.pdf" target="_blank" class="hover:text-indigo-400">Resume</a>
-    </div>
-  </div>
-  <div id="mobileMenu" class="md:hidden hidden flex-col mt-4 gap-4 px-4">
-    <a href="#home" class="nav-link hover:text-indigo-400">Home</a>
-    <a href="#skills" class="nav-link hover:text-indigo-400">Skills</a>
-    <a href="#projects" class="nav-link hover:text-indigo-400">Projects</a>
-    <a href="#contact" class="nav-link hover:text-indigo-400">Contact</a>
-    <a href="resume.pdf" target="_blank" class="hover:text-indigo-400">Resume</a>
-  </div>
-</nav>
+  
+
 
   <div class="logo">Kuldeep</div>
   <div class="menu-toggle" onclick="openBentoMenu()">☰ Menu</div>
@@ -554,9 +507,9 @@ Hi, I'm Kuldeep Routray — an AI-focused Software Engineer passionate about bui
       { name: "GitHub", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg", link: "https://github.com" },
       { name: "VS Code", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg", link: "https://code.visualstudio.com/" },
       { name: "ChatGPT", icon: "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg", link: "https://chat.openai.com" },
-      {name:"Google Workspace",icon:"https://upload.wikimedia.org/wikipedia/commons/f/f0/Google_Office_Apps_Logo.png",link:"https://workspace.google.com/"},
+      {name:"Google Workspace",icon:"google.png",link:"https://workspace.google.com/"},
       {name:"CVAT.ai",icon:"cvat.png",link:"https://cvat.ai"},
-      {name:"Microsoft 365",icon:"https://upload.wikimedia.org/wikipedia/commons/f/f9/Microsoft_365_%282022%29.svg",link:"https://www.microsoft.com/en-us/microsoft-365"},
+      {name:"Microsoft 365",icon:"microsoft",link:"https://www.microsoft.com/en-us/microsoft-365"},
       {name:"AnyDesk",icon:"https://upload.wikimedia.org/wikipedia/commons/4/4e/AnyDesk_Logo.svg",link:"https://anydesk.com"}
    
     ],
